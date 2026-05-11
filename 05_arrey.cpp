@@ -169,30 +169,52 @@
 //     return 0;
 // }
 
+// #include<iostream>
+// using namespace std;
+// int main(){
+//     int arr[]={1,2,3,4,5};
+//     int size=sizeof(arr)/sizeof(int);
+//     int start=0;
+//     int end=size-1;
+//     for (int  i = 0; i < size; i++)
+//     {
+//         while (start<end)
+//         {
+//             swap(arr[start],arr[end]);
+//             start++;
+//             end--;
+//         }
+        
+//     }
+//     for (int  i = 0; i < size; i++)
+//     {
+//         cout<<arr[i];
+//     }
+    
+    
+//     return 0;
+// }
+
+// // let star t for first
+
 #include<iostream>
 using namespace std;
 int main(){
-    int arr[]={1,2,3,4,5};
+    int arr[]={1,2,4,-3,-1,-6,-4,3,6,7,-4};
     int size=sizeof(arr)/sizeof(int);
-    int start=0;
-    int end=size-1;
-    for (int  i = 0; i < size; i++)
+    int curr=0,maxsum=-1000;
+    for (int i = 0; i < size; i++)
     {
-        while (start<end)
+        curr+=arr[i];
+        maxsum=max(curr,maxsum);
+        if (curr<0)
         {
-            swap(arr[start],arr[end]);
-            start++;
-            end--;
+            curr=0;
         }
         
     }
-    for (int  i = 0; i < size; i++)
-    {
-        cout<<arr[i];
-    }
+    cout<<maxsum;
     
-    
+
     return 0;
 }
-
-// let star t for first
